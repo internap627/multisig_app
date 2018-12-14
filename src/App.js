@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Particles from 'react-particles-js'
+import Dashboard from './components/dashboard/Dashboard';
 
 const particleOpt = {
   particles: {
@@ -19,14 +20,21 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div className='background'>
-        <div className="App">
-          <Navbar />
+        <div className='page'>
+          <div className='background'>
+            <div className="App">
+              <Navbar />
+            </div>
+            <Particles params={particleOpt} />
+
+          </div>
+          <Switch>
+            <Route path='/' component={Dashboard} />
+          </Switch>
         </div>
-        <Particles params={particleOpt}/>
-        </div>
+
       </BrowserRouter>
-      
+
     );
   }
 }
