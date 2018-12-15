@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CoinList from '../coins/CoinList'
+import Notifications from './Notifications'
 
 class Dashboard extends Component {
     state = {
@@ -20,6 +21,9 @@ class Dashboard extends Component {
                 <div className='row'>
                     <div className='col s12 m6'> 
                         <CoinList coins={this.state.coins} />
+                    </div>
+                    <div className='col s12 m5 offset-m1'>
+                        <Notifications/>
                     </div>
                 </div>
             </div>

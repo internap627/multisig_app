@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Particles from 'react-particles-js'
 import Dashboard from './components/dashboard/Dashboard';
+import SignIn from './components/auth/SignIn'
+import SignUp from './components/auth/SignUp'
 
 const particleOpt = {
   particles: {
@@ -25,11 +27,13 @@ class App extends Component {
             <div className="App">
               <Navbar />
             </div>
-            <Particles params={particleOpt} />
+            {/* <Particles params={particleOpt} /> */}
 
           </div>
           <Switch>
-            <Route path='/' component={Dashboard} />
+            <Route exact path='/' component={Dashboard} />
+            <Route exact path='/signin' component={SignIn} />
+            <Route exact path='/signup' component={SignUp} />
           </Switch>
         </div>
 
