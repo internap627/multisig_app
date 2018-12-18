@@ -4,9 +4,11 @@ import CoinSummary from './CoinSummary'
 const CoinList = ({coins}) => {
     return (
         <div className='coin-list section'>
-            {coins.map(coin => {
-                return <CoinSummary key={coin.rank} coin={coin}/>
-            })}
+            {
+                Object.keys(coins).map(coin => {
+                    return <CoinSummary key={coin} coinName={coin} coinValue={coins[coin]}/>
+                })
+            }
         </div>
     )
 }

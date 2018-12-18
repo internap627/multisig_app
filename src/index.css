@@ -14,10 +14,19 @@ code {
 }
 
 .background {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: grey;
+  height: 100vh;
+  width: 100vw;
 }
 
-/* .dashboard {
+.background div {
+  height: 100%;
+}
+
+.dashboard {
   position: fixed;
   padding-top: 56px;
   top: 0;
@@ -25,7 +34,11 @@ code {
   width: 100vw;
   height: 100vh;
   overflow: scroll;
-} */
+}
+
+.container {
+  z-index: 10;
+}
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
