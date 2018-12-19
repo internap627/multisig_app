@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import CoinList from './CoinList'
+
+
 
 class AddTransaction extends Component {
     state = {
         coin: '',
-        amount: ''
+        amount: '',
+
+        selectedCoin: undefined
     }
 
     handleChange = (e) => {
@@ -17,24 +22,14 @@ class AddTransaction extends Component {
         console.log(this.state)
     }
 
+    selectCoin = (selectedCoin) => {
+        //setState selectedCoin
+    }
+
   render() {
+    const {coins} = this.props
     return (
-      <div className='container'>
-        <form className='white' onSubmit={this.handleSubmit}>
-            <h5 className='grey-text text-darken-3'>Add Transaction</h5>
-            <div className='input-field'>
-                <label htmlFor='text'>Coin</label>
-                <input type='text' id='coin' onChange={this.handleChange}/>
-            </div>
-            <div className='input-field'>
-                <label htmlFor='number'>Amount</label>
-                <input type='number' id='amount' onChange={this.handleChange}/>
-            </div>
-            <div className='input-field'>
-                <button className='btn pink lighten-1 z-depth-0'>Submit</button>
-            </div>
-        </form>
-      </div>
+        <CoinList coins={coins} />
     )
   }
 }

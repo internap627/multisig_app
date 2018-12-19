@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Notifications = () => {
+const Notifications = ({ coins }) => {
+  console.log(coins)
   return (
     <div>
-      <p>Notifications</p>
+      <p>Transactions</p>
     </div>
   )
 }

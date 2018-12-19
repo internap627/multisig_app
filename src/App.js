@@ -22,7 +22,8 @@ const particleOpt = {
 
 class App extends Component {
   state = {
-    user: null
+    user: null,
+    apiCoins: []
   }
 
   authListener() {
@@ -42,6 +43,11 @@ class App extends Component {
 
   componentDidMount() {
     this.authListener()
+    fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
+        .then(res => res.json())
+        .then(res => this.setState(
+          {  apiCoins: [...res]}
+        ))
   }
 
   render() {
@@ -57,12 +63,15 @@ class App extends Component {
           <Switch>
             {
               this.state.user &&
-              <Route exact path='/' render={() => <Dashboard user={this.state.user} />} />
+              <Route exact path='/' render={() => <Dashboard 
+                user={this.state.user}
+                apiCoins={this.state.apiCoins}
+                />} />
             }
 
             <Route exact path='/signin' render={(props) => <SignIn storeUser={this.storeUser} />} />
             <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/addtransaction' component={AddTransaction} />
+          <Route exact path='/addtransaction' render={(props) => <AddTransaction coins={this.state.apiCoins}/>} /> 
           </Switch>
         </div>
 
