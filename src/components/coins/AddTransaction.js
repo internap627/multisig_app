@@ -35,14 +35,21 @@ class AddTransaction extends Component {
         })
     }
 
+    deselectCoin = () => {
+        this.setState({
+            selectedCoin: undefined
+        })
+    }
+
     filterCoins = (coins) => {
        return coins.filter(coin => coin.name.toLowerCase().includes (this.state.searchTerm.toLowerCase()) )
     }
 
   render() {
-    const {coins} = this.props
+    
+    const {coins, user} = this.props
     const filtered = this.filterCoins(coins)
-    console.log(this.state.searchTerm)
+    
     return (
         <div>
         <div className='container'>
@@ -54,7 +61,10 @@ class AddTransaction extends Component {
                     </div>
                 </form>
             </div>
-        <CoinList coins={filtered} />
+        <CoinList selectedCoin={this.state.selectedCoin} selectCoin={this.selectCoin}
+        deselectCoin={this.deselectCoin}
+        coins={filtered} user={user} 
+        />
         </div>
     )
   }

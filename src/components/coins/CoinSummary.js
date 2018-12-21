@@ -1,22 +1,23 @@
 import React from 'react'
+import BuySellForm from './BuySellForm'
 
-const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, select}) => {
+const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isSelected, handleClick, deselectCoin, user}) => {
     const val = !value ? price_usd : value
     const price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val)
     
     return (
-        <div className='card z-depth-0 coin-summary'>
+        <div className='card z-depth-0 coin-summary' onClick={()=> handleClick && handleClick()}>
             <div className='card-content grey-text text-darken-3'>
                 <span className='card-title'> {name} </span>
                 {
                     quantity !== undefined && <p className='grey-text'>{quantity} </p>
                 }
-                <p className='grey-text'>{price} </p>
+                <span className='grey-text'>{price} </span>
                 {
                     handlePurchaseClick && <button onClick={handlePurchaseClick} className='grey-text'>BUY</button>
                 }
                 {
-                    // selectedCoin && <BuySellForm />
+                    isSelected && <BuySellForm user={user} name={name} deselectCoin={deselectCoin}  />
                 }
             </div>
         </div>

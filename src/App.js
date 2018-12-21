@@ -71,7 +71,7 @@ class App extends Component {
 
             <Route exact path='/signin' render={(props) => <SignIn storeUser={this.storeUser} />} />
             <Route exact path='/signup' component={SignUp} />
-          <Route exact path='/addtransaction' render={(props) => <AddTransaction coins={this.state.apiCoins}/>} /> 
+          <Route exact path='/addtransaction' render={(props) => <AddTransaction coins={this.state.apiCoins} user={this.state.user}/>} /> 
           </Switch>
         </div>
 

@@ -7,8 +7,10 @@ class Dashboard extends Component {
 
     state = {
         coins: null,
+        transactions: null,
         wallet: [],
-        user: {}
+        user: {},
+        selectedCoin: undefined
     }
     
     getApiCoins = () => {
@@ -36,10 +38,9 @@ class Dashboard extends Component {
                     if (!coins.includes(coin)) coins.push(coin);
                 }
             })
-            
             this.setState({coins})
-            console.log(this.state.coins)
         })
+        
         
     }
 
@@ -61,6 +62,28 @@ class Dashboard extends Component {
         }
     })
 
+    selectCoin = (selectedCoin) => {
+        this.setState({
+            selectedCoin: {...selectedCoin}
+        })
+        db.collection('coins').get().then((snapshot) => {
+            const transactions = []
+            snapshot.docs.forEach(item => {
+                const getItemData = item.data();
+                
+                if (getItemData.user === this.props.user.email && getItemData.coin === this.state.selectedCoin.name ) {
+                    const transaction = {
+                        name: getItemData.coin,
+                        amount: getItemData.amount,
+                        id: item.id
+                    }
+                    transactions.push(transaction)
+                }
+            })
+            this.setState({transactions})
+        })
+    }
+
     render() {
        
         return (
@@ -71,11 +94,11 @@ class Dashboard extends Component {
                             this.state.apiCoins && <CoinList coins={this.getAPICoinList()} />
                         } */}
                         {
-                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} />
+                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} selectCoin={this.selectCoin} />
                         }
                     </div>
                     <div className='col s12 m5 offset-m1'>
-                        <Notifications />
+                        <Notifications coins={this.state.selectedCoin && this.state.transactions }  />
                     </div>
                 </div>
             </div>
