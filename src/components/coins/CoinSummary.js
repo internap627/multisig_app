@@ -12,7 +12,7 @@ const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isS
                 {
                     quantity !== undefined && <p className='grey-text'>{quantity} </p>
                 }
-                <span className='grey-text'>{price} </span>
+                <span className='green-text'>{price} </span>
                 {
                     handlePurchaseClick && <button onClick={handlePurchaseClick} className='grey-text'>BUY</button>
                 }

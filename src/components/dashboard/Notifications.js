@@ -2,7 +2,7 @@ import React from 'react'
 import Transactions from './Transactions'
 
 const Notifications = ({ coins }) => {
-  console.log(coins)
+  
   return (
     <div>
       <ul className="collapsible">
