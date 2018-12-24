@@ -57,7 +57,7 @@ class App extends Component {
           <div className="App">
             <Navbar user={this.state.user} />
           </div>
-          <div className='background'>
+          <div className='background indigo lighten-4'>
             <Particles params={particleOpt} width={'100%'} height={'100%'} />
           </div>
           <Switch>

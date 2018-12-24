@@ -7,7 +7,7 @@ const Navbar = ({user}) => {
     const initials = user && user.email[0].toUpperCase()
     return (
         <div className='navbar-fixed'>
-        <nav className='nav-wrapper grey darken-3'>
+        <nav className='nav-wrapper indigo darken-4'>
             <div className='container'>
                 <Link to='/' className="brand-logo left">Multisig</Link>
                 {user? <SignedInLinks initials={initials}/> :

@@ -11,7 +11,7 @@ const SignedInLinks = ({ initials }) => {
         <ul className='right'>
             <li><NavLink to='/addtransaction'>Add Transaction</NavLink> </li>
             <li><NavLink to='/' onClick={logout}>Log Out</NavLink> </li>
-            <li><NavLink to='/' className='btn btn-floating pink lighten-1'>{initials}</NavLink> </li>
+            <li><NavLink to='/' className='btn btn-floating teal'>{initials}</NavLink> </li>
         </ul>
     )
 }

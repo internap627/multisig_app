@@ -48,7 +48,7 @@ class BuySellForm extends Component {
                         <input type='number' step='0.01' id='buy'  onChange={this.handleChange} />
                     </div>
                     <div className='input-field'>
-                        <button className='btn pink lighten-1 z-depth-0'>Submit</button>
+                        <button className='btn teal z-depth-0'>Submit</button>
                     </div>
                 </form>
                 <form className='white' name='sell' onSubmit={this.handleSubmit}>
@@ -57,7 +57,7 @@ class BuySellForm extends Component {
                         <input type='number' step='0.01' id='sell'  onChange={this.handleChange} />
                     </div>
                     <div className='input-field'>
-                        <button className='btn pink lighten-1 z-depth-0'>Submit</button>
+                        <button className='btn teal z-depth-0'>Submit</button>
                     </div>
                 </form>
             </div>
