@@ -9,7 +9,8 @@ const SignedInLinks = ({ initials }) => {
 
     return (
         <ul className='right'>
-            <li><NavLink to='/addtransaction'>Add Transaction</NavLink> </li>
+            <li><NavLink to='/news'>News</NavLink> </li>
+            <li><NavLink to='/addtransaction'>Search</NavLink> </li>
             <li><NavLink to='/' onClick={logout}>Log Out</NavLink> </li>
             <li><NavLink to='/' className='btn btn-floating teal'>{initials}</NavLink> </li>
         </ul>

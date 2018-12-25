@@ -5,19 +5,30 @@ import Particles from 'react-particles-js'
 import Dashboard from './components/dashboard/Dashboard';
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
+import News from './components/dashboard/News'
 import AddTransaction from './components/coins/AddTransaction'
 import firebase from './config/fbConfig'
 
 const particleOpt = {
-  particles: {
-    number: {
-      value: 150,
-      density: {
-        enable: true,
-        value_area: 800
-      }
+  "particles": {
+    "number": {
+        "value": 50
+    },
+    "color": {
+      "value": "#1a237e"
+  },
+    "size": {
+        "value": 3
     }
-  }
+},
+"interactivity": {
+    "events": {
+        "onhover": {
+            "enable": true,
+            "mode": "repulse"
+        }
+    }
+}
 }
 
 class App extends Component {
@@ -68,7 +79,7 @@ class App extends Component {
                 apiCoins={this.state.apiCoins}
                 />} />
             }
-
+            <Route exact path='/news' render={(props) => <News />} />
             <Route exact path='/signin' render={(props) => <SignIn storeUser={this.storeUser} />} />
             <Route exact path='/signup' component={SignUp} />
           <Route exact path='/addtransaction' render={(props) => <AddTransaction coins={this.state.apiCoins} user={this.state.user}/>} /> 
