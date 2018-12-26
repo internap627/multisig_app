@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from "react-router";
 import firebase from '../../config/fbConfig'
 
 class SignUp extends Component {
@@ -16,6 +17,10 @@ class SignUp extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then(u => {
+            console.log(u)
+            this.props.history.push('/')
+        })
         .catch((err) => {console.log(err.message)})
     }
 
@@ -41,4 +46,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp
+export default withRouter(SignUp)
