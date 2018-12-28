@@ -2,7 +2,7 @@ import React from 'react'
 import CoinSummary from './CoinSummary'
 import FirstScreen from './FirstScreen'
 
-const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user}) => {
+const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transactions}) => {
     let balance = 0
     coins.forEach(coin => {
         balance += coin.value
@@ -32,6 +32,7 @@ const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user}) => {
                     isSelected={selectedCoin ? coin.id === selectedCoin.id : false} 
                     key={coin.name} 
                     {...coin} 
+                    transactions={transactions}
                     />
                 })
             }

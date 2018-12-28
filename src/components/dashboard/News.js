@@ -26,7 +26,7 @@ class News extends Component {
         return (
             <div className='coin-list section'>
                 {
-                    articles && articles.map(article => <NewsSummary article={article} />)
+                    articles && articles.map(article => <NewsSummary key={article.title} article={article} />)
                 }
             </div>
         )

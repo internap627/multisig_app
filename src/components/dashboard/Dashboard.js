@@ -3,6 +3,7 @@ import CoinList from '../coins/CoinList'
 import Notifications from './Notifications'
 import {db} from '../../config/fbConfig'
 
+
 class Dashboard extends Component {
 
     state = {
@@ -80,8 +81,12 @@ class Dashboard extends Component {
                     transactions.push(transaction)
                 }
             })
-            this.setState({transactions})
+            this.setState({transactions}, () => window.M.Modal.init(document.getElementById('modal1')).open() )
+
         })
+       
+        
+
     }
 
     render() {
@@ -92,12 +97,12 @@ class Dashboard extends Component {
                     <div className='col s12 m6'> 
                        
                         {
-                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} selectCoin={this.selectCoin} />
+                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} selectCoin={this.selectCoin} transactions={this.state.selectedCoin && this.state.transactions } />
                         }
                     </div>
-                    <div className='col s12 m5 offset-m1'>
+                    {/* <div className='col s12 m5 offset-m1'>
                         <Notifications coins={this.state.selectedCoin && this.state.transactions }  />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
