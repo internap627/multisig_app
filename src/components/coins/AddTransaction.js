@@ -53,8 +53,8 @@ class AddTransaction extends Component {
     return (
         <div>
         <div className='container'>
-                <form className='white'>
-                    <h5 className='grey-text text-darken-3'>Search</h5>
+                <form >
+                    <h5 className='grey-text text-darken-3'></h5>
                     <div className='input-field'>
                         <label htmlFor='text'>coin name</label>
                         <input type='text' id='search' value={this.state.searchTerm} onChange={this.handleSearchChange} />

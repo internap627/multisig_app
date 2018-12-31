@@ -90,14 +90,16 @@ class Dashboard extends Component {
     }
 
     render() {
-       
+       const { apiCoins } = this.props
         return (
             <div className='dashboard container'>
                 <div className='row'>
                     <div className='col s12 m6'> 
                        
                         {
-                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} selectCoin={this.selectCoin} transactions={this.state.selectedCoin && this.state.transactions } />
+                            this.state.coins && <CoinList coins={this.getDashboardCoinList()} selectCoin={this.selectCoin} transactions={this.state.selectedCoin && this.state.transactions } 
+                            apiCoins={apiCoins}
+                            />
                         }
                     </div>
                     {/* <div className='col s12 m5 offset-m1'>
