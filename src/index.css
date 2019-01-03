@@ -76,4 +76,16 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .sum-button {
   height: 35px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.card .card-content p {
+  margin: 0;
+  line-height: 1rem;
+  /* vertical-align: middle; */
+  align-items: center;
+  /* justify-content: center; */
+  display: flex;
 }

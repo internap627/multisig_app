@@ -12,7 +12,17 @@ const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isS
             <div className='card-content grey-text text-darken-3'>
                 <span className='card-title'> {name} </span>
                 {
-                    quantity !== undefined && <p className='grey-text'>{quantity} </p>
+                    quantity !== undefined && <div>
+                        
+                        <p className='grey-text'>
+                        <span>
+                        <i class="material-icons">
+                        account_balance_wallet
+                        </i>
+                        </span>
+                         {quantity} 
+                         </p>
+                        </div>
                 }
                 <span className='green-text'>{price} </span>
                 {
