@@ -14,7 +14,7 @@ const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isS
                 {
                     quantity !== undefined && <div>
                         
-                        <p className='grey-text'>
+                        <p className='grey-text wallet-balance'>
                         <span>
                         <i class="material-icons">
                         account_balance_wallet
@@ -36,7 +36,7 @@ const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isS
                 <button onClick={()=> {
                     handleClick && handleClick()
                     // transactions && window.M.Modal.init(document.getElementById('modal1')).open()
-                    }} className="btn-floating right btn waves-effect waves-light teal scale-transition modal-trigger"><i className="material-icons">{icon}</i>
+                    }} className="btn-floating right btn waves-effect waves-light indigo scale-transition modal-trigger"><i className="material-icons">{icon}</i>
                     </button>
                 </div>
               
@@ -48,7 +48,7 @@ const CoinSummary = ({name, price_usd, quantity, value, handlePurchaseClick, isS
                 <Notifications coins={transactions} />
                 </div>
                 <div className="modal-footer">
-                <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" className="modal-close waves-effect waves-green btn-flat">OK</a>
                 </div>
   </div>
 

@@ -12,7 +12,7 @@ const SignedInLinks = ({ initials }) => {
             <li><NavLink to='/news'>News</NavLink> </li>
             <li><NavLink to='/addtransaction'>Search</NavLink> </li>
             <li><NavLink to='/' onClick={logout}>Log Out</NavLink> </li>
-            <li><NavLink to='/' className='btn btn-floating teal'>{initials}</NavLink> </li>
+            <li><NavLink to='/' className='btn btn-floating indigo lighten-4'><div className="initials">{initials}</div></NavLink> </li>
         </ul>
     )
 }

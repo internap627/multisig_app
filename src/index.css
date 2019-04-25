@@ -27,13 +27,15 @@ code {
 }
 
 .dashboard {
-  position: fixed;
+  /* position: fixed;
   padding-top: 56px;
   top: 0;
-  left: 0;
-  width: 100vw;
+  
   height: 100vh;
-  overflow: scroll;
+  overflow: scroll; */
+  margin: auto;
+  width: 1000px;
+  
 }
 
 .container {
@@ -44,7 +46,7 @@ input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
-  border-color: #009688;
+  border-color: #212897;
   box-shadow: none;
 }
 
@@ -81,6 +83,10 @@ textarea.materialize-textarea:focus:not([readonly]){
   bottom: 30px;
 }
 
+.card .card-title {
+  font-weight: 500;
+}
+
 .card .card-content p {
   margin: 0;
   line-height: 1rem;
@@ -88,6 +94,21 @@ textarea.materialize-textarea:focus:not([readonly]){
   align-items: center;
   /* justify-content: center; */
   display: flex;
+}
+
+.green-text {
+  font-size: 20px;
+}
+
+.wallet-balance {
+  font-size: 20px;
+  
+}
+
+.initials {
+  color: #1a237e;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .WelcomeGroup {
