@@ -89,3 +89,22 @@ textarea.materialize-textarea:focus:not([readonly]){
   /* justify-content: center; */
   display: flex;
 }
+
+.WelcomeGroup {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+}
+
+.WelcomeText {
+  margin: 0;
+  color: rgba(38, 37, 133, 0.8);
+  font-size: 45px;
+  line-height: 1.5;
+}
+
+.WelcomeParagraph {
+  color: rgba(41, 40, 40, 0.6);
+  font-size: 30px;
+  line-height: 1.5;
+}
