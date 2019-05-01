@@ -12,7 +12,7 @@ const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transact
     const price = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(balance)
     
     return (
-        <div>
+        <div className="add-transaction">
         {
             coins.length < 1 && <AddTransaction coins={apiCoins} />
         }
