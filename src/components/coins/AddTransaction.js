@@ -48,7 +48,7 @@ class AddTransaction extends Component {
   render() {
     
     const {coins, user} = this.props
-    const filtered = this.filterCoins(coins)
+    const filtered = coins && this.filterCoins(coins)
     
     return (
         <div>

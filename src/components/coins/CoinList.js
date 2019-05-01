@@ -5,7 +5,7 @@ import AddTransaction from './AddTransaction'
 
 const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transactions, apiCoins}) => {
     let balance = 0
-    coins.forEach(coin => {
+    coins && coins.forEach(coin => {
         balance += coin.value
     })
     
@@ -14,7 +14,7 @@ const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transact
     return (
         <div className="add-transaction">
         {
-            coins.length < 1 && <AddTransaction coins={apiCoins} />
+            coins ? coins.length < 1 && <AddTransaction coins={apiCoins} /> : null
         }
         <div className='coin-list section'>
         
@@ -27,7 +27,7 @@ const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transact
             </div>
         </div>}
             {
-                coins.map(coin => {
+                coins ? coins.map(coin => {
                     return <CoinSummary 
                     user={user}
                     handleClick={() => selectCoin && selectCoin(coin)}
@@ -37,7 +37,7 @@ const CoinList = ({coins, selectedCoin, selectCoin, deselectCoin, user, transact
                     {...coin} 
                     transactions={transactions}
                     />
-                })
+                }) : null
             }
         </div>
         </div>
