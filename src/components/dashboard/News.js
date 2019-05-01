@@ -24,7 +24,7 @@ class News extends Component {
     render() {
         const articles = this.state.news
         return (
-            <div className='coin-list section'>
+            <div className='coin-list section news-group'>
                 {
                     articles && articles.map(article => <NewsSummary key={article.title} article={article} />)
                 }

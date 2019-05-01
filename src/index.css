@@ -48,6 +48,11 @@ code {
   
 }
 
+.news-group {
+  margin: 0 auto;
+  width: 75%;
+}
+
 .container {
   z-index: 10;
   /* padding: 0 0.5px; */
